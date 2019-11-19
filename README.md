@@ -10,6 +10,7 @@ Step 1 : TABLE (BOOK) , gom cac field :
 - PageCount : 123
 - Description : hello
 - Amount : 12 \$
+- image : Them 1 input (<input type="file" name="image" />) de upload image cho Book do. ( Chuc nang upload Image minh co lam demo san roi, khong hieu cho nao thi alo len nha )
   Va cua tac gia nao. (show ra 1 SELECT, OPTION ) de lua chon cac Author ==> Cac chuc nang can lam : (GET, POST, PUT, DELETE) Same Author
 
 ---
