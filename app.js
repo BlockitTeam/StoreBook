@@ -43,9 +43,11 @@ app.use(expressLayout);
 
 const indexRouter = require('./routes/index'); // Index
 const authorRouter = require('./routes/author'); // Author Router
+const uploadRouter = require('./routes/upload'); // Upload Router
 
 app.use('/',indexRouter);
 app.use('/author',authorRouter);
+app.use('/upload', uploadRouter);
 
 
 app.listen(PORT ,()=> {
