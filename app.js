@@ -7,9 +7,12 @@ var path = require('path');
 const bodyParser = require('body-parser');
 const expressLayout = require('express-ejs-layouts');
 const fs = require('fs');
+const passport = require('passport');
+const strategy = require('passport-local').Strategy;
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-var flash = require('express-flash');
+const logger = require('morgan');
+var flash = require('connect-flash');
 const app = express();
 
 
@@ -39,15 +42,16 @@ app.use(session({
   }))
 app.use(flash());
 app.use(expressLayout);
-
+app.use(logger('dev'));
 
 const indexRouter = require('./routes/index'); // Index
 const authorRouter = require('./routes/author'); // Author Router
 const uploadRouter = require('./routes/upload'); // Upload Router
-
+const bookRouter = require('./routes/book'); //Book Router
 app.use('/',indexRouter);
 app.use('/author',authorRouter);
 app.use('/upload', uploadRouter);
+app.use('/book',bookRouter);
 
 
 app.listen(PORT ,()=> {
